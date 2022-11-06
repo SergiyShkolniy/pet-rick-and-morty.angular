@@ -1,0 +1,21 @@
+<div class="characterId__container">
+  <div><img src="{{character.image}}" alt="{{character.name}}"></div>
+  <h2>{{character.name}}</h2>
+  <div ngSwitch="{{character.status}}">
+    <div *ngSwitchCase="'Alive'" class="info__status-green">{{character.status.toLowerCase()}}</div>
+    <div *ngSwitchCase="'Dead'" class="info__status-black">{{character.status.toLowerCase()}}</div>
+    <div *ngSwitchCase="'unknown'" class="info__status-grey">{{character.status.toLowerCase()}}</div>
+  </div>
+  <a routerLink="/character" class="back">back</a>
+
+  <div class="info">
+    <div class="text">species: <b>{{character.species}}</b></div>
+    <div class="text">gender: <b>{{character.gender}}</b></div>
+  </div>
+  <div class="text">created: <b>{{character.created.slice(0,-14)}}</b></div>
+  <div class="text">origin: <b>{{character.origin.name}}</b></div>
+  <div class="episodes">
+    <p>participated in</p> <b>{{character.episode.length}}</b>
+    <p>episodes</p>
+  </div>
+</div>

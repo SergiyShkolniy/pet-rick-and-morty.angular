@@ -5,12 +5,15 @@ import { CharacterRoutingModule } from './character-routing.module';
 import { CharactersComponent } from './components/characters/characters.component';
 import { CharacterComponent } from './components/character/character.component';
 import {CharacterService} from "./services";
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+
 
 
 @NgModule({
   declarations: [
     CharactersComponent,
-    CharacterComponent
+    CharacterComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     CommonModule,

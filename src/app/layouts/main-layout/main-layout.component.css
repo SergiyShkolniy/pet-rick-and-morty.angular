@@ -3,7 +3,8 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-image: radial-gradient(circle at 46.04% 49.65%, #ffe200 0, #ffd100 10%, #ffbf00 20%, #ffaa00 30%, #ff9314 40%, #f37b1f 50%, #e26426 60%, #d3502b 70%, #c53f30 80%, #b93035 90%, #af233b 100%);
 }
-.main {
+.main__container {
   flex: 1 1 auto;
 }

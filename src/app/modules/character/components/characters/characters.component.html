@@ -1,4 +1,9 @@
-<div>
-  <app-character *ngFor="let character of characters" [character]="character"></app-character>
-  {{charactersTotal}}
+<div class="characters">
+  <app-character *ngFor="let character of characters"  [character]="character"></app-character>
 </div>
+<div class="pagination">
+  <button class="button" (click)="prev()">Prev</button>
+  <div class="pagination__center"><p>{{page}} page</p> of <p>{{pagesMax}} pages</p></div>
+  <button class="button" (click)="next()">Next</button>
+</div>
+

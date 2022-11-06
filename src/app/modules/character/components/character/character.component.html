@@ -1,3 +1,19 @@
-<div>
-  {{character.name}}
-</div>
+<a (click)="getDetails()" class="link">
+  <div class="character">
+    <div class="character__photo">
+      <img src="{{character.image}}" alt="{{character.name}}">
+      <div ngSwitch="{{character.status}}">
+        <div *ngSwitchCase="'Alive'" class="info__status-green">{{character.status.toLowerCase()}}</div>
+        <div *ngSwitchCase="'Dead'" class="info__status-black">{{character.status.toLowerCase()}}</div>
+        <div *ngSwitchCase="'unknown'" class="info__status-grey">{{character.status.toLowerCase()}}</div>
+      </div>
+    </div>
+    <div class="character__info info">
+      <h3 class="info__title">{{character.name}}</h3>
+      <div>species: <b>{{character.species}}</b></div>
+      <div>gender: <b>{{character.gender}}</b></div>
+      <h4>last known location:</h4>
+      <p class="info__text">{{character.location.name}}</p>
+    </div>
+  </div>
+</a>
