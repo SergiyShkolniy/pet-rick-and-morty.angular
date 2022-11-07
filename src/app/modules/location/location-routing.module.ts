@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LocationsComponent} from "./components/locations/locations.component";
+import {LocationsResolver} from "./services/resolvers/locations.resolver";
 
 const routes: Routes = [
   {
-    path: '', component: LocationsComponent
+    path: '', component: LocationsComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange', resolve: {locations: LocationsResolver}
   }
 ];
 

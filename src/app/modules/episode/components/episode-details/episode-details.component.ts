@@ -19,16 +19,25 @@ export class EpisodeDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.episodeService.getById(id).subscribe(value => {
-        this.episode = value;
-        this.idCharacters = value.characters.map(value => +value.split('/').reverse()[0])
-        this.characterService.getByIdMulti(this.idCharacters).subscribe(value => {
-          this.episodeCharacters = value;
-        })
+    this.activatedRoute.data.subscribe(({episode}) => {
+      this.episode = episode
+      this.idCharacters = episode.characters.map((value:string) => +value.split('/').reverse()[0])
+      this.characterService.getByIdMulti(this.idCharacters).subscribe(value => {
+        this.episodeCharacters = value;
       })
-
     })
+
+
+    // this.activatedRoute.params.subscribe(({id}) => {
+    //   this.episodeService.getById(id).subscribe(value => {
+    //     this.episode = value;
+    //     this.idCharacters = value.characters.map(value => +value.split('/').reverse()[0])
+    //     this.characterService.getByIdMulti(this.idCharacters).subscribe(value => {
+    //       this.episodeCharacters = value;
+    //     })
+    //   })
+    //
+    // })
   }
 
 }

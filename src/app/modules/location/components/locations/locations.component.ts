@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import {LocationService} from "../../services";
-import {ILocation} from "../../interfaces";
+import {ILocation, IResponseLocation} from "../../interfaces";
+import {ActivatedRoute, Router} from "@angular/router";
+import {map} from "rxjs";
+
 
 @Component({
   selector: 'app-locations',
@@ -15,13 +18,18 @@ export class LocationsComponent implements OnInit {
   pagesMax: number;
   page: number = 1;
 
-  constructor(private locationService : LocationService) { }
+  constructor(private locationService : LocationService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.locationService.getAll(this.page).subscribe(value => {
+    this.activatedRoute.data.pipe(
+      map(value => value['locations'] as IResponseLocation)
+    ).subscribe((value) => {
       this.locations = value.results
-      this.locationsTotal = value.info.count;
+      this.locationsTotal = value.info.count
       this.pagesMax = value.info.pages
+      this.router.navigate([], {queryParams: {page: this.page}})
     })
   }
 

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 import {ICharacter} from "../../interfaces";
-import {CharacterService} from "../../services";
+
 
 @Component({
   selector: 'app-character-details',
@@ -12,13 +12,11 @@ import {CharacterService} from "../../services";
 export class CharacterDetailsComponent implements OnInit {
   character: ICharacter;
 
-  constructor(private activatedRoute: ActivatedRoute, private characterService: CharacterService) {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.characterService.getById(id).subscribe(value => this.character = value)
-    })
+    this.activatedRoute.data.subscribe(({character}) => this.character = character)
   }
 
 }

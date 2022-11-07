@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {map} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
-import {IEpisode} from "../../interface";
+import {IEpisode, IResponseEpisode} from "../../interface";
 import {EpisodeService} from "../../services";
 
 @Component({
@@ -14,14 +16,20 @@ export class EpisodesComponent implements OnInit {
   pagesMax: number;
   page: number = 1;
 
-  constructor(private episodeService :EpisodeService) { }
+  constructor(private episodeService :EpisodeService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.episodeService.getAll(this.page).subscribe(value => {
-      this.episodes = value.results;
-      this.episodesTotal = value.info.count;
+    this.activatedRoute.data.pipe(
+      map(value => value['episodes'] as IResponseEpisode)
+    ).subscribe((value) => {
+      this.episodes = value.results
+      this.episodesTotal = value.info.count
       this.pagesMax = value.info.pages
-    });
+      this.router.navigate([], {queryParams: {page: this.page}})
+
+    })
   }
 
   next(): void {

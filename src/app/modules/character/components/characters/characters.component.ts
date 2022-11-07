@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {map} from "rxjs";
 
 import {CharacterService} from "../../services";
-import {ICharacter} from "../../interfaces";
-
+import {ICharacter, IResponseCharacter} from "../../interfaces";
 
 @Component({
   selector: 'app-characters',
@@ -15,17 +16,21 @@ export class CharactersComponent implements OnInit {
   pagesMax: number;
   page: number = 1;
 
-
-  constructor(private characterService: CharacterService) {
-
+  constructor(private characterService: CharacterService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
-    this.characterService.getAll(this.page).subscribe(value => {
-      this.characters = value.results;
-      this.charactersTotal = value.info.count;
+    this.activatedRoute.data.pipe(
+      map(value => value['characters'] as IResponseCharacter)
+    ).subscribe((value) => {
+      this.characters = value.results
+      this.charactersTotal = value.info.count
       this.pagesMax = value.info.pages
-    });
+      this.router.navigate([], {queryParams: {page: this.page}})
+
+    })
   }
 
   next(): void {
@@ -35,8 +40,8 @@ export class CharactersComponent implements OnInit {
     }
   }
 
-  prev():void {
-    if (this.page >1) {
+  prev(): void {
+    if (this.page > 1) {
       this.page -= 1;
       this.ngOnInit()
     }

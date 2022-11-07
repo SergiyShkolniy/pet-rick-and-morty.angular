@@ -13,7 +13,7 @@ export class CharacterService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number): Observable<IResponseCharacter> {
+  getAll(page: number=1): Observable<IResponseCharacter> {
     return this.httpClient.get<IResponseCharacter>(urls.character, {params: {page}});
   }
 
