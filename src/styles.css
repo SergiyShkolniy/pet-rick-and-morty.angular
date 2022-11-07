@@ -20,6 +20,8 @@ body {
   min-width: 320px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 :root {

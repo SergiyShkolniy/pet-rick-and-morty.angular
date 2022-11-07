@@ -1,1 +1,11 @@
-<p>episode works!</p>
+<a (click)="getDetails()" class="link">
+  <div class="episode__container">
+    <h3>{{episode.name}}</h3>
+    <div class="episode__number">{{episode.id}}</div>
+    <span><div>data : <b>{{episode.air_date}}</b></div></span>
+    <span><div>episode : <b>{{episode.episode}}</b></div></span>
+    <div>was in this location <b>{{episode.characters.length}}</b> characters</div>
+  </div>
+</a>
+
+

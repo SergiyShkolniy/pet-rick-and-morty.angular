@@ -1,0 +1,101 @@
+.episodeCharacter {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  box-shadow: 0 1px 1px black;
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: white;
+}
+
+.episodeCharacter__photo {
+  width: 40%;
+  position: relative;
+}
+
+.episodeCharacter__photo img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.episodeCharacter__info {
+  width: 60%;
+  padding-left: 15px;
+}
+
+.info__title {
+  padding-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.info h4 {
+  padding-top: 10px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.info__text {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.info__status-green {
+  background-color: green;
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 0 10px 0 10px;
+  text-shadow: 1px 1px black;
+}
+
+.info__status-grey {
+  background-color: grey;
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 0 10px 0 10px;
+  text-shadow: 1px 1px black;
+}
+
+.info__status-black {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 0 10px 0 10px;
+  text-shadow: 1px 1px black;
+}
+
+
+@media (max-width: 576px) {
+  .episodeCharacter {
+    width: 300px;
+  }
+  .episodeCharacter__photo img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  .info__status-green {
+    bottom: 0;
+    left: 0;
+  }
+  .info__status-black {
+    bottom: 0;
+    left: 0;
+  }
+  .info__status-grey {
+    bottom: 0;
+    left: 0;
+  }
+}

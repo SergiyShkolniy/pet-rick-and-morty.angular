@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IEpisode} from "../../interface";
+import {ActivatedRoute, Router} from "@angular/router";
+
+import {ICharacter} from "../../../character/interfaces";
+import {CharacterService} from "../../../character/services";
+
 
 @Component({
   selector: 'app-episode',
@@ -6,10 +12,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./episode.component.css']
 })
 export class EpisodeComponent implements OnInit {
+  @Input()
+  episode: IEpisode;
+  idCharacters: number[];
+  episodeCharacters: ICharacter[] = [];
 
-  constructor() { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private characterService: CharacterService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  getDetails() {
+    this.router.navigate([this.episode.id], {relativeTo: this.activatedRoute})
+    this.idCharacters = this.episode.characters.map(value => +value.split('/').reverse()[0])
+    this.characterService.getByIdMulti(this.idCharacters).subscribe(value => {
+      this.episodeCharacters.push(value);
+    })
   }
 
 }

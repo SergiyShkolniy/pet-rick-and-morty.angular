@@ -1,0 +1,17 @@
+<div class="episodeCharacter" *ngIf="episodeCharacter">
+  <div class="episodeCharacter__photo">
+    <img src="{{episodeCharacter.image}}" alt="{{episodeCharacter.name}}">
+    <div ngSwitch="{{episodeCharacter.status}}">
+      <div *ngSwitchCase="'Alive'" class="info__status-green">{{episodeCharacter.status.toLowerCase()}}</div>
+      <div *ngSwitchCase="'Dead'" class="info__status-black">{{episodeCharacter.status.toLowerCase()}}</div>
+      <div *ngSwitchCase="'unknown'" class="info__status-grey">{{episodeCharacter.status.toLowerCase()}}</div>
+    </div>
+  </div>
+  <div class="character__info info">
+    <h3 class="info__title">{{episodeCharacter.name}}</h3>
+    <div>species: <b>{{episodeCharacter.species}}</b></div>
+    <div>gender: <b>{{episodeCharacter.gender}}</b></div>
+    <h4>last known location:</h4>
+    <p class="info__text">{{episodeCharacter.location.name}}</p>
+  </div>
+</div>

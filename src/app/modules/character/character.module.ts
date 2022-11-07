@@ -10,17 +10,21 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 
 
 @NgModule({
-  declarations: [
+    declarations: [
+        CharactersComponent,
+        CharacterComponent,
+        CharacterDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+        CharacterRoutingModule
+    ],
+  exports: [
     CharactersComponent,
-    CharacterComponent,
-    CharacterDetailsComponent
+    CharacterComponent
   ],
-  imports: [
-    CommonModule,
-    CharacterRoutingModule
-  ],
-  providers: [
-    CharacterService
-  ]
+    providers: [
+        CharacterService
+    ]
 })
 export class CharacterModule { }

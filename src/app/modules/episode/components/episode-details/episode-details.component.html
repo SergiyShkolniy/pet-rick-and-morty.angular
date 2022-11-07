@@ -1,1 +1,15 @@
-<p>episode-details works!</p>
+<div class="episode" *ngIf="episode">
+  <a routerLink="/episode" class="back">back</a>
+  <h2>{{episode.name}}</h2>
+  <h3>{{episode.episode}}</h3>
+  <h4>{{episode.air_date}}</h4>
+</div>
+<div class="episodeDetails__container">
+  <app-episode-characters *ngFor="let episodeCharacter of episodeCharacters"
+                          [episodeCharacter]="episodeCharacter"></app-episode-characters>
+</div>
+
+
+
+
+

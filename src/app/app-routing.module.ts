@@ -6,7 +6,7 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
-
+      { path: '', redirectTo: 'character', pathMatch: 'full' },
       {
         path: 'character',
         loadChildren: () => import('./modules/character/character.module').then(value => value.CharacterModule)

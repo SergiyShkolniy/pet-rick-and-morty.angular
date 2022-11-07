@@ -6,18 +6,21 @@ import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { EpisodeDetailsComponent } from './components/episode-details/episode-details.component';
 import {EpisodeService} from "./services";
+import { EpisodeCharactersComponent } from './components/episode-characters/episode-characters.component';
+
 
 
 @NgModule({
   declarations: [
     EpisodesComponent,
     EpisodeComponent,
-    EpisodeDetailsComponent
+    EpisodeDetailsComponent,
+    EpisodeCharactersComponent
   ],
-  imports: [
-    CommonModule,
-    EpisodeRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        EpisodeRoutingModule
+    ],
   providers: [
     EpisodeService
   ]

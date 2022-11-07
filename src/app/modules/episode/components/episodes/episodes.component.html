@@ -1,1 +1,9 @@
-<p>episodes works!</p>
+<div class="episodes">
+  <app-episode *ngFor="let episode of episodes"  [episode]="episode"></app-episode>
+</div>
+<div class="pagination">
+  <button class="button" (click)="prev()">Prev</button>
+  <div class="pagination__center"><p>{{page}} page</p> of <p>{{pagesMax}} pages</p></div>
+  <button class="button" (click)="next()">Next</button>
+</div>
+
