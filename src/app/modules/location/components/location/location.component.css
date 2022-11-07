@@ -1,0 +1,47 @@
+.location__container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  box-shadow: 0 1px 1px black;
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: white;
+  position: relative;
+}
+.location__container span{
+  width: 100%;
+  align-items: flex-start;
+  margin-left: 200px;
+}
+.location__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.location__number {
+  background-color: #c53f30;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 0 10px 0 10px;
+  text-shadow: 1px 1px black;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+
+@media (max-width: 576px) {
+  .location__container {
+    width: 300px;
+  }
+  .location__container h3 {
+    padding-left: 40px;
+  }
+  .location__number{
+    left: 10px;
+  }
+  .location__container span {
+    margin-left: 80px;
+  }
+}

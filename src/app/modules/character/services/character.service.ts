@@ -17,7 +17,7 @@ export class CharacterService {
     return this.httpClient.get<IResponseCharacter>(urls.character, {params:{page}});
   }
 
-  getById(id: number): Observable<ICharacter> {
+  getById(id: number | number[]): Observable<ICharacter> {
     return this.httpClient.get<ICharacter>(`${urls.character}/${id}`);
   }
 

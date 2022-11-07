@@ -35,7 +35,7 @@ export class CharactersComponent implements OnInit {
     }
   }
 
-  prev() {
+  prev():void {
     if (this.page >1) {
       this.page -= 1;
       this.ngOnInit()
