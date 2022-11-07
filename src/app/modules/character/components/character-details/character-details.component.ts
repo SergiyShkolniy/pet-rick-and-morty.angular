@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ICharacter} from "../../interfaces";
 import {ActivatedRoute} from "@angular/router";
+
+import {ICharacter} from "../../interfaces";
 import {CharacterService} from "../../services";
 
 @Component({

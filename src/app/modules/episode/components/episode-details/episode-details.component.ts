@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
 import {CharacterService} from "../../../character/services";
 import {EpisodeService} from "../../services";
 import {IEpisode} from "../../interface";

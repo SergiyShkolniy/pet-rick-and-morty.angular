@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+
 import {ICharacter} from "../../../character/interfaces";
 
 @Component({
