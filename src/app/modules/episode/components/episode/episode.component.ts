@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {IEpisode} from "../../interface";
-import {ActivatedRoute, Router} from "@angular/router";
 import {ICharacter} from "../../../character/interfaces";
 import {CharacterService} from "../../../character/services";
 

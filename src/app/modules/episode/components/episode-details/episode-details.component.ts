@@ -26,18 +26,6 @@ export class EpisodeDetailsComponent implements OnInit {
         this.episodeCharacters = value;
       })
     })
-
-
-    // this.activatedRoute.params.subscribe(({id}) => {
-    //   this.episodeService.getById(id).subscribe(value => {
-    //     this.episode = value;
-    //     this.idCharacters = value.characters.map(value => +value.split('/').reverse()[0])
-    //     this.characterService.getByIdMulti(this.idCharacters).subscribe(value => {
-    //       this.episodeCharacters = value;
-    //     })
-    //   })
-    //
-    // })
   }
 
 }

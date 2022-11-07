@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {map} from "rxjs";
 
-import {CharacterService} from "../../services";
+
 import {ICharacter, IResponseCharacter} from "../../interfaces";
 
 @Component({
@@ -16,8 +16,7 @@ export class CharactersComponent implements OnInit {
   pagesMax: number;
   page: number = 1;
 
-  constructor(private characterService: CharacterService,
-              private activatedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private router: Router) {
   }
 
