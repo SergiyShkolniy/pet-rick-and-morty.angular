@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
+import {NotFoundPageComponent} from "./components/not-found-page/not-found-page.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
       {
         path: 'episode',
         loadChildren: () => import('./modules/episode/episode.module').then(value => value.EpisodeModule)
+      },
+      {
+        path: '**', pathMatch: 'full', component: NotFoundPageComponent
       }
     ]
   }

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
